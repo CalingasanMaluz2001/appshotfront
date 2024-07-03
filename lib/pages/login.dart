@@ -90,7 +90,7 @@ class _LoginState extends State<Login> {
                       },
                       child: Text('Login'),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink[900],
+                        backgroundColor: Colors.white,
                         foregroundColor: Colors.black,
                       ),
                     ),
