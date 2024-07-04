@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:appshotfront/services/product.dart';
 import 'package:appshotfront/services/menuCard.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -58,6 +59,47 @@ class _MenuState extends State<Menu> {
           ),
         ),
         centerTitle: true,
+      ),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+        child: FutureBuilder(
+          future: products,
+          builder: (context, snapshots){
+            if(snapshots.connectionState == ConnectionState.waiting){
+              return Center(
+                child: SpinKitFadingCircle(
+                  color: Colors.black,
+                  size: 60.0,
+                ),
+              );
+            }
+            if(snapshots.hasData){
+              List products = snapshots.data!;
+              return Padding(
+                padding: EdgeInsets.all(3.0),
+                child: ListView.builder(
+                  itemCount: products.length,
+                  itemBuilder: (context, index){
+                    return Card(
+                      child: ListTile(
+                        title: Column(
+                          children: [
+                            Text(products[index].productName),
+                            Text(products[index].price.toString()),
+                          ],
+                        ),
+                        onTap: (){},
+                      ),
+                    );
+                  }
+                ),
+              );
+            }
+            return Center(
+              child: Text('Unable to load data'),
+            );
+          },
+        ),
       ),
     );
   }
