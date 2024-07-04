@@ -16,7 +16,7 @@ class _SignupState extends State<Signup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: Colors.pink[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),

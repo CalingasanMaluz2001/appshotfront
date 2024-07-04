@@ -16,7 +16,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.pink[100],
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
@@ -92,7 +92,7 @@ class _LoginState extends State<Login> {
                       },
                       child: Text('Login'),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.white,
+                        backgroundColor: Colors.pink[900],
                         foregroundColor: Colors.black,
                       ),
                     ),
