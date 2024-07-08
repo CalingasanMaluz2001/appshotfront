@@ -48,10 +48,10 @@ class _MenuState extends State<Menu> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white60,
+      backgroundColor: Colors.pink[100],
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        foregroundColor: Colors.black,
+        backgroundColor: Colors.pink[950],
+
         title: Text(
           'Menu',
           style: TextStyle(
