@@ -92,7 +92,7 @@ class _MenuState extends State<Menu> {
                           onTap: () {
                             Navigator.push(context, MaterialPageRoute(
                               builder: (context) =>
-                                  selectedProduct(product: products[index]),
+                                  SelectedProduct(product: products[index]),
                             )
                             );
                           },
