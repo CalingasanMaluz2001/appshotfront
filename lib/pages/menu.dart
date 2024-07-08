@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:appshotfront/pages/selectedProduct.dart';
 import 'package:flutter/material.dart';
 import 'package:appshotfront/services/product.dart';
 import 'package:appshotfront/services/menuCard.dart';
@@ -64,8 +65,8 @@ class _MenuState extends State<Menu> {
         padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
         child: FutureBuilder(
           future: products,
-          builder: (context, snapshots){
-            if(snapshots.connectionState == ConnectionState.waiting){
+          builder: (context, snapshots) {
+            if (snapshots.connectionState == ConnectionState.waiting) {
               return Center(
                 child: SpinKitFadingCircle(
                   color: Colors.black,
@@ -73,25 +74,31 @@ class _MenuState extends State<Menu> {
                 ),
               );
             }
-            if(snapshots.hasData){
+            if (snapshots.hasData) {
               List products = snapshots.data!;
               return Padding(
                 padding: EdgeInsets.all(3.0),
                 child: ListView.builder(
-                  itemCount: products.length,
-                  itemBuilder: (context, index){
-                    return Card(
-                      child: ListTile(
-                        title: Column(
-                          children: [
-                            Text(products[index].productName),
-                            Text(products[index].price.toString()),
-                          ],
+                    itemCount: products.length,
+                    itemBuilder: (context, index) {
+                      return Card(
+                        child: ListTile(
+                          title: Column(
+                            children: [
+                              Text(products[index].productName),
+                              Text(products[index].price.toString()),
+                            ],
+                          ),
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(
+                              builder: (context) =>
+                                  selectedProduct(product: products[index]),
+                            )
+                            );
+                          },
                         ),
-                        onTap: (){},
-                      ),
-                    );
-                  }
+                      );
+                    }
                 ),
               );
             }

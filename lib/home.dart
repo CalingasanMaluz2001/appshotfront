@@ -36,7 +36,7 @@ class _HomeState extends State<Home> {
                 ),
                 Divider(
                   height: 50.0,
-                  thickness: 5.0,
+                  thickness: 10.0,
                 ),
                 Row(
                   children: [
@@ -49,7 +49,7 @@ class _HomeState extends State<Home> {
                       'Name',
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: Colors.white70,
+                        color: Colors.black,
                         letterSpacing: 2.0,
                       ),
                     ),
@@ -59,7 +59,7 @@ class _HomeState extends State<Home> {
                   'Maria Luz J. Calingasan',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white70,
+                    color: Colors.black,
                     fontSize: 16.0,
                   ),
                 ),
@@ -75,7 +75,7 @@ class _HomeState extends State<Home> {
                       'Year',
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: Colors.white70,
+                        color: Colors.black,
                         letterSpacing: 2.0,
                       ),
                     ),
@@ -85,7 +85,7 @@ class _HomeState extends State<Home> {
                   '$year Year',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white70,
+                    color: Colors.black,
                     fontSize: 16.0,
                   ),
                 ),
@@ -101,7 +101,7 @@ class _HomeState extends State<Home> {
                       'Email',
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: Colors.white70,
+                        color: Colors.black,
                         letterSpacing: 2.0,
                       ),
                     ),
@@ -111,7 +111,7 @@ class _HomeState extends State<Home> {
                   'calingasanmarialuz27@gmail.com',
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white70,
+                    color: Colors.black,
                     fontSize: 16.0,
                   ),
                 ),
