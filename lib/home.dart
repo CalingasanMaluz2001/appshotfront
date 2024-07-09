@@ -42,7 +42,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.person_2,
-                      color:  Colors.white70,
+                      color:  Colors.black,
                     ),
                     SizedBox(width: 3.0,),
                     Text(
@@ -68,7 +68,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.school,
-                      color:  Colors.white70,
+                      color:  Colors.black,
                     ),
                     SizedBox(width: 3.0,),
                     Text(
@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
                   children: [
                     Icon(
                       Icons.email,
-                      color:  Colors.white70,
+                      color:  Colors.black,
                     ),
                     SizedBox(width: 3.0,),
                     Text(
