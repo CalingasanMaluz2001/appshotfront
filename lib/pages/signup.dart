@@ -46,7 +46,7 @@ class _SignupState extends State<Signup> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Lets Get Started',
+                'Lets Get Started!',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
                   letterSpacing: 2.0,
@@ -60,9 +60,11 @@ class _SignupState extends State<Signup> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: <Widget>[
                     TextFormField(
-                      maxLength: 40,
                       decoration: InputDecoration(
                           label: Text('Name'),
+                          filled: true,
+                          fillColor: Colors.white,
+                          prefixIcon: Icon(Icons.person),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0)
                           )
@@ -85,6 +87,9 @@ class _SignupState extends State<Signup> {
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                           label: Text('Email'),
+                          filled: true,
+                          fillColor: Colors.white,
+                        prefixIcon: Icon(Icons.email),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(10.0)
                           )
@@ -101,9 +106,12 @@ class _SignupState extends State<Signup> {
                     ),
                     SizedBox(height: 20.0,),
                     TextFormField(
+                      maxLength: 20,
                       obscureText: _obscure,
                       decoration: InputDecoration(
                           label: Text('Password'),
+                          filled: true,
+                          fillColor: Colors.white,
                           prefixIcon: Icon(Icons.lock_rounded),
                           suffixIcon: IconButton(
                             icon: Icon(_obscureIcon),

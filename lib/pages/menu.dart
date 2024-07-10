@@ -19,13 +19,14 @@ class _MenuState extends State<Menu> {
   late Future<List<dynamic>> products;
   Future<List<dynamic>> fetchData() async{
     final response = await http.get(
-        Uri.parse('http://10.0.2.2:8080/products')
+        Uri.parse('http://10.0.2.2:8080/api/v1/product/all')
     );
     final data = jsonDecode(response.body);
     List products = <Product>[];
     for(var product in data){
       products.add(Product.fromJson(product));
     }
+    print(response.body);
     return products;
   }
 
@@ -50,7 +51,8 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       backgroundColor: Colors.pink[100],
       appBar: AppBar(
-        backgroundColor: Colors.pink[950],
+        backgroundColor: Colors.pink[900],
+        foregroundColor: Colors.black,
 
         title: Text(
           'Menu',

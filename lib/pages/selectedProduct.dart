@@ -37,7 +37,7 @@ class _SelectedProductState extends State<SelectedProduct> {
           Column(
             children: [
               Text(
-                widget.product.productName,
+            '₱ ${totalAmount.toStringAsFixed(2)}',
                 style: TextStyle(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
