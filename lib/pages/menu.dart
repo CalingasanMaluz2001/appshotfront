@@ -51,63 +51,69 @@ class _MenuState extends State<Menu> {
     return Scaffold(
       backgroundColor: Colors.pink[100],
       appBar: AppBar(
-        backgroundColor: Colors.pink[900],
-        foregroundColor: Colors.black,
-
-        title: Text(
-          'Menu',
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
-            letterSpacing: 2.0,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.grey[200],
+        title: Center(
+          child: Image.asset(
+            'assets/logo2.png',
+            height: 200.0,
+            width: 500.0,
           ),
         ),
-        centerTitle: true,
       ),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
-        child: FutureBuilder(
-          future: products,
-          builder: (context, snapshots) {
-            if (snapshots.connectionState == ConnectionState.waiting) {
-              return Center(
-                child: SpinKitFadingCircle(
-                  color: Colors.black,
-                  size: 60.0,
-                ),
-              );
-            }
-            if (snapshots.hasData) {
-              List products = snapshots.data!;
-              return Padding(
-                padding: EdgeInsets.all(3.0),
-                child: ListView.builder(
-                    itemCount: products.length,
-                    itemBuilder: (context, index) {
-                      return Card(
-                        child: ListTile(
-                          title: Column(
-                            children: [
-                              Text(products[index].productName),
-                              Text(products[index].price.toString()),
-                            ],
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/background.jfif'),
+                fit: BoxFit.cover
+            ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(20, 20, 20, 0),
+          child: FutureBuilder(
+            future: products,
+            builder: (context, snapshots) {
+              if (snapshots.connectionState == ConnectionState.waiting) {
+                return Center(
+                  child: SpinKitFadingCircle(
+                    color: Colors.black,
+                    size: 60.0,
+                  ),
+                );
+              }
+              if (snapshots.hasData) {
+                List products = snapshots.data!;
+                return Padding(
+                  padding: EdgeInsets.all(3.0),
+                  child: ListView.builder(
+                      itemCount: products.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          child: ListTile(
+                            title: Column(
+                              children: [
+                                Text(products[index].productName),
+                                Text(products[index].price.toString()),
+                              ],
+                            ),
+                            onTap: () {
+                              Navigator.push(context, MaterialPageRoute(
+                                builder: (context) =>
+                                    SelectedProduct(product: products[index]),
+                              )
+                              );
+                            },
                           ),
-                          onTap: () {
-                            Navigator.push(context, MaterialPageRoute(
-                              builder: (context) =>
-                                  SelectedProduct(product: products[index]),
-                            )
-                            );
-                          },
-                        ),
-                      );
-                    }
-                ),
+                        );
+                      }
+                  ),
+                );
+              }
+              return Center(
+                child: Text('Unable to load data'),
               );
-            }
-            return Center(
-              child: Text('Unable to load data'),
-            );
-          },
+            },
+          ),
         ),
       ),
     );

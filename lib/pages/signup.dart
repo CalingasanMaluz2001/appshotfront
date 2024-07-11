@@ -38,7 +38,7 @@ class _SignupState extends State<Signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Colors.white54,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(15.0, 50.0, 10.0, 0),
@@ -162,7 +162,7 @@ class _SignupState extends State<Signup> {
                       },
                       child: Text('Sign up'),
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink[900],
+                        backgroundColor: Colors.grey[400],
                         foregroundColor: Colors.black,
                       ),
                     ),

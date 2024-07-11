@@ -17,15 +17,22 @@ class _DashboardState extends State<Dashboard> {
         onTap: (int val){
           switch(val){
             case 0:
-              Navigator.pushNamed(context, '/profile');
+              Navigator.pushNamed(context, '/');
               break;
             case 1:
+              Navigator.pushNamed(context, '/profile');
+              break;
+            case 2:
               Navigator.pushNamed(context, '/menu');
               break;
           }
       },
         currentIndex: 0,
         items: const[
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home'
+          ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_3),
             label: 'Profile'
@@ -37,18 +44,24 @@ class _DashboardState extends State<Dashboard> {
         ],
       ),
       appBar: AppBar(
-        backgroundColor: Colors.pink[900],
-        title: Text(
-          'Dashboard',
-          style: TextStyle(
-            letterSpacing: 2.0,
-            fontWeight: FontWeight.bold,
+        automaticallyImplyLeading: false,
+        backgroundColor: Colors.grey[200],
+        title: Center(
+          child: Image.asset(
+            'assets/logo2.png',
+            height: 200.0,
+            width: 500.0,
           ),
         ),
-        centerTitle: true,
       ),
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Colors.grey,
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/background.jfif'),
+                fit: BoxFit.cover
+            )
+        ),
         child: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
